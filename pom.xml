@@ -4,7 +4,7 @@
     <artifactId>orion-tiny-math</artifactId>
     <version>1.0.0</version>
     <name>Orion Tiny Math</name>
-    <description>Small Java math library using primitives, BigInteger and BigDecimal </description>
+    <description>Small Java math library using primitives, BigInteger and BigDecimal</description>
     <url>https://github.com/orionlibs/orion-tiny-math</url>
     
     
@@ -85,6 +85,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.6.3</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -135,19 +138,6 @@
                     <waitUntil>uploaded</waitUntil>
                 </configuration>
             </plugin>
-
-
-            <!--<plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.13</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>-->
             
             
             <plugin>
@@ -190,6 +180,7 @@
                 <version>10.0.3</version>
                 <configuration>
                     <nvdApiServerId>nvdserver</nvdApiServerId>
+                    <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
                 </configuration>
                 <executions>
                     <execution>
@@ -239,7 +230,7 @@
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.9.3</version>
+                <version>5.10.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -271,7 +262,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.20.2</version>
+            <version>3.25.3</version>
         </dependency>
 
 
@@ -286,6 +277,13 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-inline</artifactId>
             <version>5.2.0</version>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.16.1</version>
         </dependency>
     </dependencies>
 </project>
